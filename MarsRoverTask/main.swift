@@ -8,9 +8,9 @@
 
 import Foundation
 
-var maxValue = readLine()!
+var maxValue = readLine() ?? ""
 var cuurentPosition = readLine() ?? ""
-var actionCommand = readLine()!
+var actionCommand = readLine() ?? ""
 
 var maxValueArray = maxValue.compactMap{ $0.wholeNumberValue }
 var cuurentPositionArray = cuurentPosition.compactMap{ $0.wholeNumberValue }
@@ -66,8 +66,7 @@ func goAhead() {
     }
 }
 
-func action(item: String) {
-    
+func action(item: String) {    
     for item in actionCommandArray {
         if (cuurentPositionArray[0] > maxValueArray[0]) || cuurentPositionArray[1] > maxValueArray[1] {
             print("Lütfen belirtilen aralıkta değer giriniz.")
@@ -83,7 +82,6 @@ func action(item: String) {
             goAhead()
         }
     }
-    
 }
 
 action(item: actionCommand)
